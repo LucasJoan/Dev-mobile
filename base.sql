@@ -335,7 +335,7 @@ insert into StatJoueur values(null,1,'6',520,4,3,null,null,3.3,86.1,0.2,1,8.70,1
 insert into StatJoueur values(null,2,'6',518,11,4,null,null,5.3,71.1,0.8,3,8.65,1,2);
 insert into StatJoueur values(null,11,'4',310,2,2,null,null,2.8,88.7,null,1,8.40,1,2);
 insert into StatJoueur values(null,6,'6',522,5,2,1,null,5.5,74.5,1.8,2,8.38,1,2);
-insert into StatJoueur values(null,7,'5',448,3,1,null,null,2.8,81.7,0.4,2,8.30);
+insert into StatJoueur values(null,7,'5',448,3,1,null,null,2.8,81.7,0.4,2,8.30,1,2);
 insert into StatJoueur values(null,9,'5',382,1,5,null,null,1.6,89.2,null,3,8.24,1,2);
 insert into StatJoueur values(null,12,'4',327,3,4,1,null,2.8,81.6,null,2,8.16,1,2);
 insert into StatJoueur values(null,13,'5',450,null,1,null,null,1.4,92,8,1,8.08,1,2);
@@ -345,12 +345,12 @@ insert into StatJoueur values(null,14,'6',523,4,3,null,null,2.3,85.1,0.2,2,8.02,
 
 insert into StatJoueur values(null,1,'5',450,3,1,2,null,3.4,94.7,1.6,2,8.26,1,3);
 insert into StatJoueur values(null,4,'8',683,8,2,1,null,2.6,90.4,1.1,5,8.25,1,3);
-insert into StatJoueur values(null,5,'5(1)',,489,8,null,2,null,6,87,null,3,8.23,1,3);
+insert into StatJoueur values(null,5,'5(1)',489,8,null,2,null,6,87,null,3,8.23,1,3);
 insert into StatJoueur values(null,1,'6',526,4,3,1,null,2.8,79.8,null,1,8.22,1,3);
 insert into StatJoueur values(null,8,'6',540,6,1,1,null,1.8,87.5,0.2,3,8.06,1,3);
 insert into StatJoueur values(null,2,'6',534,7,1,1,null,3.2,74.5,1.2,1,7.94,1,3);
 insert into StatJoueur values(null,16,'6',492,2,5,1,null,2.7,85.9,0.2,1,7.83,1,3);
-insert into StatJoueur values(null,10,'5(1)',455,8,null,null,null,3.5,77,0.7,1,7.771,3);
+insert into StatJoueur values(null,10,'5(1)',455,8,null,null,null,3.5,77,0.7,1,7.77,1,3);
 insert into StatJoueur values(null,17,'7',558,null,null,null,null,null,47.1,0.3,2,7.73,1,3);
 insert into StatJoueur values(null,18,'6',540,6,1,1,null,3.2,75.6,1.8,1,7.70,1,3);
 
@@ -386,12 +386,12 @@ insert into StatJoueur values(null,14,'6',523,4,3,null,null,2.3,85.1,0.2,2,8.02,
 
 insert into StatJoueur values(null,1,'5',450,3,1,2,null,3.4,94.7,1.6,2,8.26,2,3);
 insert into StatJoueur values(null,4,'8',683,8,2,1,null,2.6,90.4,1.1,5,8.25,2,3);
-insert into StatJoueur values(null,5,'5(1)',,489,8,null,2,null,6,87,null,3,8.23,2,3);
+insert into StatJoueur values(null,5,'5(1)',489,8,null,2,null,6,87,null,3,8.23,2,3);
 insert into StatJoueur values(null,1,'6',526,4,3,1,null,2.8,79.8,null,1,8.22,2,3);
 insert into StatJoueur values(null,8,'6',540,6,1,1,null,1.8,87.5,0.2,3,8.06,2,3);
 insert into StatJoueur values(null,2,'6',534,7,1,1,null,3.2,74.5,1.2,1,7.94,2,3);
 insert into StatJoueur values(null,16,'6',492,2,5,1,null,2.7,85.9,0.2,1,7.83,2,3);
-insert into StatJoueur values(null,10,'5(1)',455,8,null,null,null,3.5,77,0.7,1,7.772,3);
+insert into StatJoueur values(null,10,'5(1)',455,8,null,null,null,3.5,77,0.7,1,7.77,2,3);
 insert into StatJoueur values(null,17,'7',558,null,null,null,null,null,47.1,0.3,2,7.73,2,3);
 insert into StatJoueur values(null,18,'6',540,6,1,1,null,3.2,75.6,1.8,1,7.70,2,3);
 
@@ -425,12 +425,12 @@ insert into StatJoueur values(null,14,'6',523,4,3,null,null,2.3,85.1,0.2,2,8.02,
 
 insert into StatJoueur values(null,1,'5',450,3,1,2,null,3.4,94.7,1.6,2,8.26,3,3);
 insert into StatJoueur values(null,4,'8',683,8,2,1,null,2.6,90.4,1.1,5,8.25,3,3);
-insert into StatJoueur values(null,5,'5(1)',,489,8,null,2,null,6,87,null,3,8.23,3,3);
+insert into StatJoueur values(null,5,'5(1)',489,8,null,2,null,6,87,null,3,8.23,3,3);
 insert into StatJoueur values(null,1,'6',526,4,3,1,null,2.8,79.8,null,1,8.22,3,3);
 insert into StatJoueur values(null,8,'6',540,6,1,1,null,1.8,87.5,0.2,3,8.06,3,3);
 insert into StatJoueur values(null,2,'6',534,7,1,1,null,3.2,74.5,1.2,1,7.94,3,3);
 insert into StatJoueur values(null,16,'6',492,2,5,1,null,2.7,85.9,0.2,1,7.83,3,3);
-insert into StatJoueur values(null,10,'5(1)',455,8,null,null,null,3.5,77,0.7,1,7.773,3);
+insert into StatJoueur values(null,10,'5(1)',455,8,null,null,null,3.5,77,0.7,1,7.77,3,3);
 insert into StatJoueur values(null,17,'7',558,null,null,null,null,null,47.1,0.3,2,7.73,3,3);
 insert into StatJoueur values(null,18,'6',540,6,1,1,null,3.2,75.6,1.8,1,7.70,3,3);
 
