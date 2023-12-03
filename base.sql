@@ -14,13 +14,14 @@ create table statistique(
     nom_statistique varchar(20)
 );
 
+
 insert into statistique values(null,'Equipes');
 insert into statistique values(null,'joueurs');
 
 
 create table generalEquipe(
     id_generalEquipeEquipe int primary key auto_increment,
-    Équipe varchar(30),
+    Équipe varchar(30), 
     Compétition varchar(5),
     Buts int,
     Tirspm DECIMAL(10,2),
@@ -114,7 +115,8 @@ create table DefenseEquipe(
     Interceptionspm decimal(10,2),
     Fautespm decimal(10,2),
     Hors_jeuxpm decimal(10,2),
-    Note decimal(10,2),id_SousOnglet int,
+    Note decimal(10,2),
+    id_SousOnglet int,
     Id_statistique int,
     FOREIGN KEY (id_SousOnglet) REFERENCES Sous_Onglet(id_SousOnglet),
     FOREIGN KEY (Id_statistique) REFERENCES Statistique(Id_statistique)
@@ -455,3 +457,141 @@ insert into AttaqueJoueur values(null,'James Maddison Tottenham, 27, MO(CGD)','6
 insert into AttaqueJoueur values(null,'Lautaro Martínez Inter, 26, AC','5(1)',455,8,null,3.5,0.3,1.2,1.8,0.2,1,1.7,7.77,3,2);
 insert into AttaqueJoueur values(null,'Adrien Rabiot Juventus, 28, MDC,M(G)','7',630,2,1,1.1,1,2,1.1,0.1,0.3,2.1,7.76,3,2);
 insert into AttaqueJoueur values(null,'Alexandre Oukidja Metz, 35, GB','7',558,null,null,null,null,0.1,0.3,null,null,null,7.73,3,2);
+
+-- create view ---------------------------------------------------------------------------------------------------------------------
+
+-- Statistique Equipe ______________________________________________________
+-- Equipe general
+create view generale_General  as
+select generalEquipe.Équipe as Equipe,
+generalEquipe.Compétition as Compétition,
+generalEquipe.Buts as buts,
+generalEquipe.Tirspm as Tirspm,
+generalEquipe.Discipline1 as Discipline,
+generalEquipe.Possession as Possession,
+generalEquipe.PassesRéussies as PassesRéussies,
+generalEquipe.AériensGagnés as AériensGagnés,
+generalEquipe.Note as note,
+Sous_Onglet.nom_SousOnglet,
+statistique.nom_statistique as statistiqueEquipe
+from generalEquipe
+join Sous_Onglet
+on generalEquipe.id_SousOnglet=Sous_Onglet.id_SousOnglet
+join statistique
+on generalEquipe.Id_statistique=statistique.Id_statistique;
+
+select * from generale_General where nom_SousOnglet='General';
+select * from generale_General where nom_SousOnglet='Domicile';
+select * from generale_General where nom_SousOnglet='Exterieur';
+
+-- Equipe Defence
+
+create view generale_Defence  as
+select DefenseEquipe.Équipe as Equipe,
+    DefenseEquipe.Compétition as Competition,
+    DefenseEquipe.Tirspm as Tirspm,
+    DefenseEquipe.Taclespm as Taclespm,
+    DefenseEquipe.Interceptionspm as Interceptionspm,
+    DefenseEquipe.Fautespm as Fautespm,
+    DefenseEquipe.Hors_jeuxpm as Hors_jeuxpm,
+    DefenseEquipe.Note as Note,
+    Sous_Onglet.nom_SousOnglet,
+    statistique.nom_statistique as statistiqueEquipe
+from DefenseEquipe
+join Sous_Onglet
+on DefenseEquipe.id_SousOnglet=Sous_Onglet.id_SousOnglet
+join statistique
+on DefenseEquipe.Id_statistique=statistique.Id_statistique;
+
+-- equipe Attaque
+
+create view General_Attaque as
+select
+    AttaqueEquipe.Equipe as Equipe,
+    AttaqueEquipe.Compétition as Competition,
+    AttaqueEquipe.Tirspm as Tirspm,
+    AttaqueEquipe.TirsCApm  TirsCApm,
+    AttaqueEquipe.Dribblespm as Dribblespm,
+    AttaqueEquipe.Fautessubiespm as Fautessubiespm, 
+    AttaqueEquipe.Note as Note,
+    Sous_Onglet.nom_SousOnglet,
+    statistique.nom_statistique as statistiqueEquipe
+from AttaqueEquipe
+join Sous_Onglet
+on AttaqueEquipe.id_SousOnglet=Sous_Onglet.id_SousOnglet
+join statistique
+on AttaqueEquipe.Id_statistique=statistique.Id_statistique;
+
+-- Statistique Joueur________________________________________________________
+
+-- Joueur General
+create view Joueur_General as
+select
+    generalJoueur.Joueurs as Joueurs,
+    generalJoueur.Apps Apps,
+    generalJoueur.Mins as mins,
+    generalJoueur.buts as buts,
+    generalJoueur.P_Decisives as P_Decisives,
+    generalJoueur.jau as jau,
+    generalJoueur.Rou as Rou,
+    generalJoueur.TpM  as TpM,
+    generalJoueur.PR as PR,
+    generalJoueur.AériensGagnés as AerienGagnés,  
+    generalJoueur.HdM as HdM,
+    generalJoueur.Note  as Note, 
+    Sous_Onglet.nom_SousOnglet,
+    statistique.nom_statistique as statistiqueEquipe
+from generalJoueur
+join Sous_Onglet
+on generalJoueur.id_SousOnglet=Sous_Onglet.id_SousOnglet
+join statistique
+on generalJoueur.Id_statistique=statistique.Id_statistique;
+
+-- joueur Defense
+
+create view Joueur_Defense as
+select
+    DefenseJoueur.Joueurs as joueurs,
+    DefenseJoueur.Apps as Apps,
+    DefenseJoueur.Mins as mins,
+    DefenseJoueur.Tacles as Tacles,
+    DefenseJoueur.Inter as Inter,
+    DefenseJoueur.Fautes asFautes,
+    DefenseJoueur.Hors_jeux as Hors_jeux,
+    DefenseJoueur.Dég as Deg,
+    DefenseJoueur.Drb as Drb,
+    DefenseJoueur.Contres as Contres,
+    DefenseJoueur.CSC as CSC,
+    DefenseJoueur.Note as Note,
+    Sous_Onglet.nom_SousOnglet,
+    statistique.nom_statistique as statistiqueEquipe
+from DefenseJoueur
+join Sous_Onglet
+on DefenseJoueur.id_SousOnglet=Sous_Onglet.id_SousOnglet
+join statistique
+on DefenseJoueur.Id_statistique=statistique.Id_statistique;
+
+-- joueur Attaque
+
+create view Joueur__Attaque as
+select
+    AttaqueJoueur.Joueurs as Joueurs,
+    AttaqueJoueur.Apps as Apps,
+    AttaqueJoueur.Mins as Mins,
+    AttaqueJoueur.Buts Buts,
+    AttaqueJoueur.P_Décisives as Decisives, 
+    AttaqueJoueur.TpM as TpM,
+    AttaqueJoueur.PClé as PClé,
+    AttaqueJoueur.Drb  as Drb,
+    AttaqueJoueur.FautesSub as FautesSub,
+    AttaqueJoueur.H_J as H_J,
+    AttaqueJoueur.Dépo as Dépo,
+    AttaqueJoueur.CtrlRat as CtrlRat,
+    AttaqueJoueur.Note as Note,
+    Sous_Onglet.nom_SousOnglet,
+    statistique.nom_statistique as statistiqueEquipe
+from AttaqueJoueur
+join Sous_Onglet
+on AttaqueJoueur.id_SousOnglet=Sous_Onglet.id_SousOnglet
+join statistique
+on AttaqueJoueur.Id_statistique=statistique.Id_statistique;
