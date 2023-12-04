@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data from API</title>
+</head>
+<body>
+
+<h1>Data from Defense Joueur Table</h1>
+<div id="defensejoueur-data"></div>
+
+<h1>Data from Attaque Equipe Table</h1>
+<div id="attaqueequipe-data"></div>
+
+<script>
+    function fetchData(apiEndpoint, targetElementId) {
+        fetch(apiEndpoint)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("defensejoueur-data").innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+    fetchData('http://localhost/ci306_service/index.php/web-service/get_data', 'defensejoueur-data');
+    fetchData('http://localhost/ci306_service/index.php/web-service/get_donne', 'attaqueequipe-data');
+</script>
+
+</body>
+</html>
